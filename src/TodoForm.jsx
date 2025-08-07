@@ -11,15 +11,20 @@ export const TodoForm = () => {
 
   // handles the form submision
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent refrsh from defaultly
+
+    // prevent adding empty todo
+    if (text.trim() === "") {
+      alert("please enter the todo item");
+      return;
+    }
 
     dispatch({ type: "ADD", payload: text });
-    setText("");
+    setText("");  // it clear input
   };
   return (
     // creating form
-
-    <form onSubmit={handleSubmit} className="todo-form">
+    <form onSubmit={handleSubmit} className="visually-hidden">
       <input
         className="todo-input"
         type="text"

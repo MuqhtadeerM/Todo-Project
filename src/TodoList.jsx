@@ -7,9 +7,8 @@ export const TodoList = () => {
   return (
     <ul>
       {todos
-        .filter((todo) => todo)
+        .filter((todo) => todo && todo.text.trim())
         .map((todo) => {
-          console.log("Todo is rendering", todo);
           return <TodoItems key={todo.id} todo={todo} />;
         })}
     </ul>

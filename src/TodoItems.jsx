@@ -4,13 +4,15 @@ import "./App.css";
 
 export const TodoItems = ({ todo }) => {
   const { dispatch } = useContext(TodoContext);
+  console.log(todo);
 
-  if (!todo) return null; 
+  if (!todo) return null;
+
   // use to add the editing functionality
   const [isEditing, setIsEditing] = useState(false);
 
   // use to place exisiting data in form
-  const [editText, setEditText] = useState(todo);
+  const [editText, setEditText] = useState(todo.text);
 
   const handleEdit = () => {
     if (editText.trim()) {
@@ -43,6 +45,7 @@ export const TodoItems = ({ todo }) => {
             >
               {todo.text}
             </span>
+
             <div className="button-row">
               <button onClick={() => setIsEditing(true)}>Edit</button>
               <button
