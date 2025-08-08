@@ -11,6 +11,7 @@ const initialState = JSON.parse(localStorage.getItem("todos-state")) || {
 
 function todoReducer(state, action) {
   switch (action.type) {
+
     case "ADD":
       return {
         ...state,
@@ -23,6 +24,7 @@ function todoReducer(state, action) {
           },
         ],
       };
+    
     case "DELETE":
       return {
         ...state,
