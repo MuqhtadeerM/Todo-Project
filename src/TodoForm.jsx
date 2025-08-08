@@ -24,7 +24,7 @@ export const TodoForm = () => {
   };
   return (
     // creating form
-    <form onSubmit={handleSubmit} className="visually-hidden">
+    <form onSubmit={handleSubmit}>
       <input
         className="todo-input"
         type="text"
@@ -32,7 +32,7 @@ export const TodoForm = () => {
         placeholder="Add and Edit items"
         onChange={(e) => setText(e.target.value)}
       />
-      <button className="todo-button" type="submit">
+      <button className="todo-button-add" type="submit">
         ADD
       </button>
     </form>

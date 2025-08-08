@@ -22,42 +22,44 @@ export const TodoItems = ({ todo }) => {
   };
 
   return (
-    <ul style={{ listStyle: "none" }}>
-      <div className="todo-item-container">
-        {isEditing ? (
-          <>
-            <input
-              className="todo-input"
-              type="text"
-              value={editText}
-              onChange={(e) => setEditText(e.target.value)}
-            />
-            <button className="todo-button" onClick={handleEdit}>
-              Update
-            </button>
-          </>
-        ) : (
-          <>
-            <span
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-              }}
-            >
-              {todo.text}
-            </span>
+    <li
+      className="todo-item"
+      draggable
+      onDragStart={(e) => e.dataTransfer.setData("text/plain", todo.id)}
+    >
+      {isEditing ? (
+        <>
+          <input
+            className="todo-input"
+            type="text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
+          <button className="todo-button-add2" onClick={handleEdit}>
+            Update
+          </button>
+        </>
+      ) : (
+        <>
+          <span
+            style={{
+              textDecoration: todo.completed ? "line-through" : "none",
+            }}
+          > 
+            {todo.text}
+          </span>
 
-            <div className="button-row">
-              <button onClick={() => setIsEditing(true)}>Edit</button>
-              <button
-                onClick={() => dispatch({ type: "DELETE", payload: todo.id })}
-              >
-                Delete
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-    </ul>
+          <div className="button-row">
+            <button onClick={() => setIsEditing(true)}>Edit</button>
+            <button
+              onClick={() => dispatch({ type: "DELETE", payload: todo.id })}
+            >
+              Delete
+            </button>
+          </div>
+        </>
+      )}
+    </li>
   );
 };
 

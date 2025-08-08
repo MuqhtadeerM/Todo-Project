@@ -2,16 +2,19 @@ import "./App.css";
 import { Todo } from "./Context";
 import { Search } from "./Search";
 import { TodoForm } from "./TodoForm";
-import TodoItems from "./TodoItems";
 import TodoList from "./TodoList";
-
+import CompletedTask from "./CompletedTask";
+import "./App.css"
 function App() {
   return (
     <Todo>
       <Search />
       <TodoForm />
-      <TodoList />
-      <TodoItems />
+
+      <div className="task-columns">
+        <TodoList />
+        <CompletedTask />
+      </div>
     </Todo>
   );
 }
