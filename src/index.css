@@ -1,4 +1,3 @@
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -36,7 +35,6 @@ h1 {
   line-height: 1.1;
 }
 
-
 button:hover {
   border-color: #646cff;
 }
@@ -57,4 +55,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-

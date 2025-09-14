@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { TodoContext } from "./Context";
+import { TodoContext } from "../context/Context";
 import "./App.css";
 
 export const TodoForm = () => {
@@ -20,7 +20,7 @@ export const TodoForm = () => {
     }
 
     dispatch({ type: "ADD", payload: text });
-    setText("");  // it clear input
+    setText(""); // it clear input
   };
   return (
     // creating form

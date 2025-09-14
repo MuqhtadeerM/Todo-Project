@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { TodoContext } from "./Context";
+import { TodoContext } from "../context/Context";
 
 export const Search = () => {
   const [search, setSearch] = useState("");
@@ -26,7 +26,7 @@ export const Search = () => {
     <div style={{ width: "250px", margin: "50px auto", position: "relative" }}>
       <input
         type="text"
-        placeholder="Searc Todos..."
+        placeholder="Search Todos..."
         value={search}
         onChange={handleSearch}
         style={{

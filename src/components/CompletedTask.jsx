@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { TodoContext } from "./Context";
+import { TodoContext } from "../context/Context";
 import "./App.css";
-export const completedTask = () => {
+export const CompletedTask = () => {
   const { completed, dispatch } = useContext(TodoContext);
 
   // this is drag and drop functionality handler
@@ -10,7 +10,7 @@ export const completedTask = () => {
     const id = e.dataTransfer.getData("text/plain");
     dispatch({ type: "MARK_COMPLETED", payload: id });
 
-    // if (completed) return 
+    // if (completed) return
   };
 
   return (
@@ -31,4 +31,4 @@ export const completedTask = () => {
   );
 };
 
-export default completedTask;
+export default CompletedTask;

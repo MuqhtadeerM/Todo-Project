@@ -11,7 +11,6 @@ const initialState = JSON.parse(localStorage.getItem("todos-state")) || {
 
 function todoReducer(state, action) {
   switch (action.type) {
-
     case "ADD":
       return {
         ...state,
@@ -24,7 +23,7 @@ function todoReducer(state, action) {
           },
         ],
       };
-    
+
     case "DELETE":
       return {
         ...state,
@@ -40,13 +39,13 @@ function todoReducer(state, action) {
                 ...todo,
                 text: action.payload.text,
               }
-            : todo
+            : todo,
         ),
       };
 
     case "MARK_COMPLETED":
       const todoToComplete = state.todos.find(
-        (todo) => todo.id === parseInt(action.payload)
+        (todo) => todo.id === parseInt(action.payload),
       );
 
       if (!todoToComplete) return state;
@@ -55,7 +54,7 @@ function todoReducer(state, action) {
         ...state,
         // it remove the element from the todos and add it into the completed array
         todos: state.todos.filter(
-          (todo) => todo.id !== parseInt(action.payload)
+          (todo) => todo.id !== parseInt(action.payload),
         ),
         completed: [...state.completed, { ...todoToComplete, completed: true }],
       };

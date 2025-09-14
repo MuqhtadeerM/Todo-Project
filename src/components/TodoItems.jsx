@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { TodoContext } from "./Context";
+import { TodoContext } from "../context/Context";
 import "./App.css";
 
 export const TodoItems = ({ todo }) => {
@@ -45,7 +45,7 @@ export const TodoItems = ({ todo }) => {
             style={{
               textDecoration: todo.completed ? "line-through" : "none",
             }}
-          > 
+          >
             {todo.text}
           </span>
 
