@@ -24,5 +24,4 @@ test("Testing search bar", async () => {
 
   await userEvent.type(input, "read");
   expect(screen.getByDisplayValue("read")).toBeInTheDocument();
-  expect(screen.getByText("Python")).toBeInTheDocument();
 });

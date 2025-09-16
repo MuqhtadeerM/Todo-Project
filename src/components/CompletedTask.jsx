@@ -23,7 +23,12 @@ export const CompletedTask = () => {
       <ul className="todo-title">
         {completed.map((todo) => (
           <li className="todo-item" key={todo.id}>
-            <span style={{ textDecoration: "line-through" }}>{todo.text}</span>
+            <span
+              
+              style={{ textDecoration: "line-through" }}
+            >
+              {todo.text}
+            </span>
           </li>
         ))}
       </ul>
